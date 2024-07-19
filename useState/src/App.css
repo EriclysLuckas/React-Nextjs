@@ -14,7 +14,7 @@
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
-.logo.react:hover {
+.logo:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
@@ -28,21 +28,24 @@
 }
 @keyframes logo-spin-reverse {
   from {
-    transform: rotate(0deg);
+    transform: rotate(360deg);
   }
   to {
-    transform: rotate(-360deg);
+    transform: rotate(0deg);
   }
 }
+.logo.reverse{
+  animation: logo-spin-reverse infinite 20s linear;
+  filter: drop-shadow(0 0 2em #fffffffd);
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-  a:nth-of-type(2) .logoreverse {
-    animation: logo-spin infinite 20s linear;
-  }
 }
+.logo {
+  filter: drop-shadow(0 0 2em #61dafb);
+
+    animation: logo-spin infinite 20s linear;
+  }
+
+
 
 .card {
   padding: 2em;
@@ -51,3 +54,4 @@
 .read-the-docs {
   color: #888;
 }
+
