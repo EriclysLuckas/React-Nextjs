@@ -18,7 +18,6 @@ export default function HeaderPage() {
         <div className={style.navHeader}>
           <p >Inicio</p>
           <p >Produtos</p>
-          <p>Incluir</p>
 
         </div>
       </div>
