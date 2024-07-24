@@ -1,0 +1,48 @@
+.compHeader{
+  width: 100%;
+}
+.ContentHeader {
+  position: relative;
+  border-bottom:.1ch  solid rgba(58, 57, 57, 0.61) ;
+  display: flex;
+  align-items: center;  
+  
+}
+.navHeader{
+  position: absolute;
+  right: 3%;
+  gap: 10%;
+  display: flex;
+  
+  
+}
+.navHeader p {
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  cursor: pointer;
+
+
+  &:before{
+      position: absolute;
+      content: '';
+      width: 0;
+      height: 1%;
+      transition: .5s ease;
+      background-color: rgb(255, 255, 255);
+      transform: translate(-50%, -50%);
+      left: 50%;
+
+  }
+
+  &:hover{
+      &::before{
+
+          position: absolute;
+          content: '';
+          width: 80%;
+          height: 1%;
+      }
+  }
+}
+
