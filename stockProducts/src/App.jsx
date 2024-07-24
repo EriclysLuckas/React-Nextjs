@@ -2,7 +2,7 @@ import './App.css'
 import DashContent from './Components/DashContente/DashContent';
 import HeaderPage from './Components/HeaderPage/HeaderPage';
 import TableContent from './Components/TableContent/TableContent';
-import TableContentF from './Components/TableContent/TableContentFaltantes';
+import Utils from './Utils/Utils';
 
 function App() {
 
@@ -11,10 +11,9 @@ function App() {
       <HeaderPage/>
       <DashContent/>
       <div className = "Tables">
-      <TableContent/>
-      <TableContentF/>
+      <TableContent/></div>
+      <Utils/>
 
-      </div>
       </>
   )
 }
