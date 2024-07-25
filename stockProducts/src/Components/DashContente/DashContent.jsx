@@ -1,31 +1,33 @@
 import style from "./DashContent.module.css";
-import {  useState } from "react";
-
+import Utils from '../../Utils/Utils';
 
 export default function DashContent() {
 
+const base = Utils()
 
-  const [totalItem,setTotalItem] = useState()
+const totalUnd = base.reduce ((count,base)=>{
+return count+base.quantity;
+}, 0)
 
-
-
+console.log(base)
   return (
     <div className={style.contentDash}>
       <h1>Dashboard</h1>
       <div className={style.dashboard}>
         <div className={style.cardContentDash}>
           <h3 className={style.pcardContent}>Variedade de Itens</h3>
-          <p className={style.cardContentResult}>10</p></div>
+          <p className={style.cardContentResult} >10</p></div>
         <div className={style.cardContentDash}>
           <h3 className={style.pcardContent}>Total de Itens</h3>
-          <p className={style.cardContentResult}>10</p></div>
+          <p className={style.cardContentResult}>{totalUnd}</p></div>
         <div className={style.cardContentDash}>
           <h3 className={style.pcardContent}>Itens Recentes</h3>
           <p className={style.cardContentResult}>10</p></div>
         <div className={style.cardContentDash}>
           <h3 className={style.pcardContent}>Itens Acabando</h3>
           <p className={style.cardContentResult}>10</p></div>
-      </div>
+      </div>     
+
     </div>
 
 

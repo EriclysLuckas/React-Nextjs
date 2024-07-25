@@ -2,13 +2,29 @@
   "produtos": [
     { 
       "id": 1, 
-      "nome": "Produto A",
+      "name": "Produto A",
       "categoria": "Cola",
-      "modelo": "teste" ,
-      "quantidade": 5,
-      "tamanaho": 14
+      "model": "teste" ,
+      "quantity": 5,
+      "size": 14
+    },
+    { 
+      "id": 2, 
+      "name": "Produto B",
+      "categoria": "cilios 1",
+      "model": "teste" ,
+      "quantity": 12,
+      "size": 13
+    }  ,
+      { 
+      "id": 3, 
+      "name": "Produto c",
+      "categoria": "cilios 2",
+      "model": "teste" ,
+      "quantity": 1,
+      "size": 2
     }
-
+    
   ]
  
 }

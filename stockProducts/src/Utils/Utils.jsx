@@ -13,5 +13,7 @@ export default function Utils() {
     fetchData();
   }, []);
 
-  base.forEach((obj) => console.log(obj));
+  
+  return base;
+
 }
