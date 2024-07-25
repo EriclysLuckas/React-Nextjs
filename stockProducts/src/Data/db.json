@@ -1,0 +1,14 @@
+{
+  "produtos": [
+    { 
+      "id": 1, 
+      "nome": "Produto A",
+      "categoria": "Cola",
+      "modelo": "teste" ,
+      "quantidade": 5,
+      "tamanaho": 14
+    }
+
+  ]
+ 
+}

@@ -1,20 +1,17 @@
-import React, { useState } from 'react';
-
-
+import  { useState, useEffect } from "react";
 
 export default function Utils() {
-  const [produtos, setProdutos] = useState([])
+  const [base, setBase] = useState([]);
 
-  useEffect (()=>{
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch("http://localhost:3000/produtos");
+      const jsonProducts = await response.json();
 
-  });
+      setBase(jsonProducts);
+    };
+    fetchData();
+  }, []);
 
-
-
-
-
+  base.forEach((obj) => console.log(obj));
 }
-
-
-
-
