@@ -5,7 +5,7 @@ export default function Utils() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("http://localhost:3000/produtos");
+      const response = await fetch("http://localhost:3000/products");
       const jsonProducts = await response.json();
 
       setBase(jsonProducts);

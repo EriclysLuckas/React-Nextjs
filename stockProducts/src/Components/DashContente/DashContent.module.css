@@ -30,5 +30,7 @@
 @media (width < 720px){
   .dashboard{
     flex-direction: column;
+    row-gap:10px;
+
   }
 }

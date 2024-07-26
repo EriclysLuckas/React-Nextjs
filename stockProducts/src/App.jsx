@@ -10,10 +10,13 @@ function App() {
       <HeaderPage/>
       <DashContent/>
       <div className = "Tables">
-      <TableContent/></div>
+      <TableContent/>
+      
+      </div>
 
       </>
   )
+  
 }
 
 export default App

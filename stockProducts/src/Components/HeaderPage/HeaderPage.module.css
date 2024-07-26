@@ -6,11 +6,13 @@
   border-bottom:.1ch  solid rgba(58, 57, 57, 0.61) ;
   display: flex;
   align-items: center;  
-  
+}
+.TitleHeader{
+  color: rgb(0, 101, 252);
 }
 .navHeader{
   position: absolute;
-  right: 3%;
+  right: 4%;
   gap: 10%;
   display: flex;
   
@@ -29,18 +31,20 @@
       width: 0;
       height: 1%;
       transition: .5s ease;
-      background-color: rgb(255, 255, 255);
+      background-color: rgb(43, 118, 231);
       transform: translate(-50%, -50%);
       left: 50%;
+
 
   }
 
   &:hover{
       &::before{
+        box-shadow: -5px 5px 10px 0px rgb(0, 101, 252);
 
           position: absolute;
           content: '';
-          width: 80%;
+          width: 100%;
           height: 1%;
       }
   }
