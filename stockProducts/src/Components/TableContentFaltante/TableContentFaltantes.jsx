@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import style from "./TableContent.module.css";
+import style from "../TableContentFaltante/TableContentFaltantes";
 import Utils from '../../Utils/Utils';
 import { FaEye } from "react-icons/fa";
 
@@ -8,9 +8,7 @@ import { FaEye } from "react-icons/fa";
 export default function TableContentF() {
 
   const base = Utils()
-
-  
-
+  const filteredProducts = base.filter(product => product.quantity < 5);
   return (
        
 <table>
@@ -24,12 +22,11 @@ export default function TableContentF() {
 </thead>
 <tbody>
 
-  {base.map((products) => (
-    <tr key={products.id}>
+  {filteredProducts.map((products) => (
+    <tr key={products.id} className={style.trTableF}>
       <td>{products.name}</td>
       <td>{products.quantity}</td>
       <td><button className={style.btnProducts}><FaEye /></button></td>
-
     </tr>
   ))}
 

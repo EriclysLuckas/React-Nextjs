@@ -11,11 +11,13 @@
 }
 
 /* TABLE */
+
 table {
   width:100%;
   border-collapse:collapse;
 
 }
+
 table th {
 
   color: #ffffff;
@@ -39,9 +41,12 @@ table tbody tr th {
   text-align:left;
   color: #ffffff;
   height: 5ch;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 table tbody tr td{
-  height: 6ch;
+  height: 5ch;
 
   padding:2%;
   text-align: center;
