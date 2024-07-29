@@ -1,13 +1,11 @@
 import style from "./TableContent.module.css";
-import TableFaltantes from "../TableContentFaltante/TableContentFaltantes"
 import Utils from '../../Utils/Utils';
 import { FaEye } from "react-icons/fa";
 
 export default function TableContent() {
   const base = Utils()
   return (
-    <div className={style.Table}>
-      <div className={style.tableCont}>
+   
         <table>
 
           <thead>
@@ -31,11 +29,7 @@ export default function TableContent() {
           </tbody>
 
         </table>
-      </div>
-
-      <TableFaltantes />
-
-    </div>
+  
 
 
 

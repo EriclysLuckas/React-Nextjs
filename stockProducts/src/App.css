@@ -4,10 +4,16 @@
   height: 100%;
   padding: 1% 3%;
 }
-.Tables{
+.tables{
   margin-top: 5%;
   gap: 5%;
   display: flex;
   width: 100%;
+
 }
+.TableRec,.TableFaltantes{
+  width: 50%;
+}
+  
+
 
