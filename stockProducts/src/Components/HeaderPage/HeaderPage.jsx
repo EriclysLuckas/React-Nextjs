@@ -1,7 +1,6 @@
 import style from "./HeaderPage.module.css";
 
 
-
 export default function HeaderPage() {
 
   
@@ -16,8 +15,8 @@ export default function HeaderPage() {
           </h1>
         </div>
         <div className={style.navHeader}>
-          <p >Inicio</p>
-          <p >Produtos</p>
+        <p > <a href="" target="_blank" rel="noopener noreferrer">Inicio</a></p>
+          <p > <a href="" target="_blank" rel="noopener noreferrer"> Produtos</a></p>
 
         </div>
       </div>
