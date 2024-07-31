@@ -3,7 +3,7 @@ import DashContent from './Components/DashContente/DashContent';
 import HeaderPage from './Components/HeaderPage/HeaderPage';
 import TableContent from './Components/TableContent/TableContent';
 import TableFaltantes from "./Components/TableContent/TableContentFaltantes"
-
+import AddItemForm from "./Components/FormItens/AddItemForm"
 
 function App() {
 
@@ -22,7 +22,7 @@ function App() {
       
       
       </div>
-
+    <AddItemForm /> 
       </>
   )
   
