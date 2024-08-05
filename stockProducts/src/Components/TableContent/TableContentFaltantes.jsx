@@ -11,9 +11,7 @@ export default function TableContentF() {
   const filteredProducts = base.filter(product => product.quantity < 5);
 
   return (
-    <div className={style.Table}>
-      <div className={style.tableCont}>
-
+    <div className={style.TableFaltantes}>
         <table>
 
           <thead>
@@ -37,8 +35,7 @@ export default function TableContentF() {
           </tbody>
 
         </table>
-      </div>
-    </div>
+        </div> 
 
   )
 }

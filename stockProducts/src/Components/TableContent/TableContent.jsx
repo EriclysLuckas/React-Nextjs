@@ -5,6 +5,8 @@ import { FaEye } from "react-icons/fa";
 export default function TableContent() {
   const base = Utils()
   return (
+
+    <div className= {style.TableRec}>
    
         <table>
 
@@ -30,7 +32,7 @@ export default function TableContent() {
 
         </table>
   
-
+        </div>
 
 
   )

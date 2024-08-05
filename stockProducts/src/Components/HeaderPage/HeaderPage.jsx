@@ -1,6 +1,5 @@
 import style from "./HeaderPage.module.css";
-
-
+import {Link} from 'react-router-dom'
 export default function HeaderPage() {
 
   
@@ -15,8 +14,8 @@ export default function HeaderPage() {
           </h1>
         </div>
         <div className={style.navHeader}>
-        <p > <a href="" target="_blank" rel="noopener noreferrer">Inicio</a></p>
-          <p > <a href="" target="_blank" rel="noopener noreferrer"> Produtos</a></p>
+        <p > <Link to="/home" >Inicio</Link></p>
+          <p > <Link to="/produtos"> Produtos</Link></p>
 
         </div>
       </div>

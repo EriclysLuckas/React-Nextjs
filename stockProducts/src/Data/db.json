@@ -23,7 +23,16 @@
       "model": "teste" ,
       "quantity": 1,
       "size": 2
+    },
+    { 
+      "id": 4, 
+      "name": "Produto D",
+      "categoria": "cilios 3",
+      "model": "teste" ,
+      "quantity": 5,
+      "size": 2
     }
+  
   
     
     
