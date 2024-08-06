@@ -1,28 +1,12 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import './index.css'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import HeaderPage from './Components/HeaderPage/HeaderPage'
-import { Home } from "./pages/Home/Home"
-import ScreenItensGeneral from './pages/ScreenItensGeneral/ScreenItensGeneral'
+import React from 'react';
+import ReactDOM from 'react-dom/client'; // Importa o método para criar uma raiz do React
+import './index.css'; // Importa os estilos globais
+import { RouterProvider } from 'react-router-dom'; // Importa o RouterProvider para gerenciar as rotas
+import router from './routes'; // Importa a configuração de rotas
 
-
+// Cria a raiz do React e renderiza o RouterProvider
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <HeaderPage />
-      <Routes>
-        <Route path='/' element={<Home />}></Route>
-        <Route path='/home' element={<Home />}></Route>
-        <Route path='/produtos' element={<ScreenItensGeneral />}></Route>
-
-
-      </Routes>
-
-
-
-
-    </BrowserRouter>
-
+    <RouterProvider router={router} />
   </React.StrictMode>
-)
+);

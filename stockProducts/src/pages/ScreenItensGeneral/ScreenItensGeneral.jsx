@@ -2,7 +2,6 @@ import MenuItensGeneralScreen from "../../Components/MenuItensGeneralScreen/Menu
  
  export default function ScreenItensGeneral() {
   
-  // const base = Utils()
 
   
   return(

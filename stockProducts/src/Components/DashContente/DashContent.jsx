@@ -4,9 +4,11 @@ import Utils from '../../Utils/Utils';
 export default function DashContent() {
 
 const base = Utils()
+
 const filteredProducts = base.filter(product => product.quantity < 5);
 
-const filteredProductsTotal = filteredProducts.length
+const filteredProductsTotal = filteredProducts.length;
+
 const totalUnd = base.reduce ((count,base)=>{
 return count+base.quantity;
 }, 0)
