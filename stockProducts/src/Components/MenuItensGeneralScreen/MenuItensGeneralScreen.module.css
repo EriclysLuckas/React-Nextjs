@@ -5,6 +5,9 @@
     border-bottom:.1ch  solid rgba(58, 57, 57, 0.61) ;
     width: 100%;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    gap: 2%;
+
+    margin-top: 2%;
   }
   .MenuItensGeneralScreen p {
     position: relative;
@@ -36,9 +39,10 @@
     }
   }
   
-  p a{
-    text-align: center;
-    text-decoration: none;
-    color: white;
+
+
+.linkGeneral{
+  padding-bottom: 10%;
+  height: 100%;
+
 }
-  

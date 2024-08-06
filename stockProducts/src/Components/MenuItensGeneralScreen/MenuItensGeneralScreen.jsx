@@ -4,17 +4,17 @@ import { Link } from "react-router-dom"
 export default function MenuItensGeneralScreen() {
 
 
-    return(
-        
-    <>
-        <h1>STOCK ITENS</h1>
-        <div className={style.MenuItensGeneralScreen} >
+    return (
 
-            <p > <Link to="/"  >Todos os Itens </Link></p>
-            <p > <Link to="/"> Novo Item</Link></p>
+        <>
+            <h1>STOCK ITENS</h1>
+            <div className={style.MenuItensGeneralScreen} >
 
-        </div>
-    </>
+                <p > <Link to="/" className={style.linkGeneral}>Todos os Itens </Link></p>
+                <p > <Link to="/" className={style.linkGeneral}> Novo Item</Link></p>
+
+            </div>
+        </>
 
 
     )
