@@ -1,6 +1,5 @@
 
   .MenuItensGeneralScreen{
-    position: absolute;
     display: flex;
     border-bottom:.1ch  solid rgba(58, 57, 57, 0.61) ;
     width: 100%;
