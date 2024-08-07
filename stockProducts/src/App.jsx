@@ -1,10 +1,12 @@
 import LayoutRoot from "./pages/LayoutRoot"
-
+import { BaseProvider } from "./context/baseContext";
 function App() {
 
   return (
+    <BaseProvider>
+      <LayoutRoot />
 
-    <LayoutRoot />
+    </BaseProvider>
 
 
   )

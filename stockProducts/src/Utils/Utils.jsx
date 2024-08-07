@@ -1,6 +1,6 @@
 import  { useState, useEffect } from "react";
 
-export default function Utils() {
+export default function useUtils() {
   const [base, setBase] = useState([]);
 
   useEffect(() => {
