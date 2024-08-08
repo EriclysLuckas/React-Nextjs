@@ -1,19 +1,19 @@
 import style from "./DashContent.module.css";
-import Utils from '../../Utils/Utils';
+import Utils from '../../hooks/Utils';
 
 export default function DashContent() {
 
-const base = Utils()
+  const base = Utils()
 
-const filteredProducts = base.filter(product => product.quantity < 5);
+  const filteredProducts = base.filter(product => product.quantity < 5);
 
-const filteredProductsTotal = filteredProducts.length;
+  const filteredProductsTotal = filteredProducts.length;
 
-const totalUnd = base.reduce ((count,base)=>{
-return count+base.quantity;
-}, 0)
+  const totalUnd = base.reduce((count, base) => {
+    return count + base.quantity;
+  }, 0)
 
-const totalProducts = base.length
+  const totalProducts = base.length
   return (
     <div className={style.contentDash}>
       <h1>Dashboard</h1>
@@ -30,7 +30,7 @@ const totalProducts = base.length
         <div className={style.cardContentDash}>
           <h3 className={style.pcardContent}>Itens Acabando</h3>
           <p className={style.cardContentResult}>{filteredProductsTotal}</p></div>
-      </div>     
+      </div>
 
     </div>
 

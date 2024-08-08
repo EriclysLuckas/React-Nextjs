@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import style from "./TableContent.module.css";
-import Utils from '../../Utils/Utils';
+import Utils from '../../hooks/Utils';
 import { FaEye } from "react-icons/fa";
 
 
@@ -12,30 +12,30 @@ export default function TableContentF() {
 
   return (
     <div className={style.TableFaltantes}>
-        <table>
+      <table>
 
-          <thead>
-            <tr>
-              <th scope="col">Itens Acabando</th>
-              <th scope="col">Quantidade</th>
-              <th scope="col">Ação</th>
+        <thead>
+          <tr>
+            <th scope="col">Itens Acabando</th>
+            <th scope="col">Quantidade</th>
+            <th scope="col">Ação</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          {filteredProducts.map((products) => (
+            <tr key={products.id} className={style.trTableF}>
+              <td>{products.name}</td>
+              <td>{products.quantity}</td>
+              <td><button className={style.btnProducts}><FaEye /></button></td>
             </tr>
-          </thead>
-          <tbody>
-
-            {filteredProducts.map((products) => (
-              <tr key={products.id} className={style.trTableF}>
-                <td>{products.name}</td>
-                <td>{products.quantity}</td>
-                <td><button className={style.btnProducts}><FaEye /></button></td>
-              </tr>
-            ))}
+          ))}
 
 
-          </tbody>
+        </tbody>
 
-        </table>
-        </div> 
+      </table>
+    </div>
 
   )
 }
