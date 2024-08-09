@@ -15,12 +15,12 @@ const router = createBrowserRouter([
       {
         path: "produtos",
         element: <ScreenItensGeneral />,
-        //  children: [
-        //  { index: true, element: <TableGeneralItens /> }, 
+         children: [
+         { index: true, element: <TableGeneralItens /> }, 
             // { path: "all", element: <TableGeneralItens/> },
           //   { path: "id", element: <ItemID /> },
           //   { path: ":id/update", element: <UpdateItem /> },
-        // ],
+        ],
       }
     ],
   },
