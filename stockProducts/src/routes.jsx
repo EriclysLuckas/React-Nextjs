@@ -1,8 +1,8 @@
 import { createBrowserRouter } from 'react-router-dom';
 import RootLayout from './pages/LayoutRoot';
-import {Home} from './pages/Home/Home';
+import { Home } from './pages/Home/Home';
 import ScreenItensGeneral from './pages/ScreenItensGeneral/ScreenItensGeneral';
-
+import TableGeneralItens from './Components/TableGeneralItens/TableGeneralItens';
 
 const router = createBrowserRouter([
   {
@@ -15,11 +15,11 @@ const router = createBrowserRouter([
       {
         path: "produtos",
         element: <ScreenItensGeneral />,
-        // children: [
-        //   { index: true, element: <NewItem /> }, // Página padrão para /produtos
-        //   { path: "new", element: <NewItem /> },
-        //   { path: "id", element: <ItemID /> },
-        //   { path: ":id/update", element: <UpdateItem /> },
+        //  children: [
+        //  { index: true, element: <TableGeneralItens /> }, 
+            // { path: "all", element: <TableGeneralItens/> },
+          //   { path: "id", element: <ItemID /> },
+          //   { path: ":id/update", element: <UpdateItem /> },
         // ],
       }
     ],

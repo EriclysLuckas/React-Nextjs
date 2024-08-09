@@ -5,6 +5,7 @@ import useBaseContext from "../../hooks/userBaseContext";
 
 export default function TableContent() {
   const  {base} = useBaseContext();
+  const lastItens = base.slice(-5)
   return (
 
     <div className={style.TableRec}>
@@ -19,7 +20,7 @@ export default function TableContent() {
         </thead>
         <tbody>
 
-          {base.map((products) => (
+          {lastItens.map((products) => (
 
             <tr key={products.id} >
               <td>{products.name}</td>

@@ -1,11 +1,12 @@
-import MenuItensGeneralScreen from "../../Components/MenuItensGeneralScreen/MenuItensGeneralScreen"
- 
- export default function ScreenItensGeneral() {
-  
+import MenuItensNavav  from "../../Components/MenuItensNav/MenuItensNav";
+import { Outlet } from 'react-router'
 
-  
-  return(
+export default function MenuItensGeneralScreen() {
 
-    <MenuItensGeneralScreen />
-  )
+
+    return (
+            <MenuItensNavav />
+
+      
+    )
 }

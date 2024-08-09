@@ -1,4 +1,4 @@
-import style from "./MenuItensGeneralScreen.module.css"
+import style from "./MenuItensNav.module.css"
 import { Link } from "react-router-dom"
 
 export default function MenuItensGeneralScreen() {
