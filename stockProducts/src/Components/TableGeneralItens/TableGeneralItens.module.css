@@ -70,3 +70,12 @@ tbody tr td button {
 .name{
   width: 30%;
 }
+.tdBtnAll{
+  display: flex;
+  justify-content: center;
+  gap: 2%;
+  align-items: center;
+}
+.tdBtnAll button{
+  height: 70%;
+}
