@@ -14,7 +14,7 @@ export default function TableGeneralItens() {
     <thead>
       <tr className = {style.TableGeneralItensTRhead}>
         <th scope="col">ID  </th>
-        <th scope="col"> Nome</th>
+        <th scope="col" className = {style.name}> Nome</th>
         <th scope="col">  Em estoque</th>
         <th scope="col"> Categoria</th>
         <th scope="col"> Ações </th>
@@ -27,7 +27,7 @@ export default function TableGeneralItens() {
 
         <tr key={products.id} >
           <td>{products.id}</td>
-          <td>{products.name}</td>
+          <td >{products.name}</td>
           <td>{products.quantity}</td>
           <td> {products.category}</td>
           <div className = {style.btnAction}>

@@ -10,8 +10,8 @@ export default function MenuItensGeneralScreen() {
             <h1>STOCK ITENS</h1>
             <div className={style.MenuItensGeneralScreen} >
 
-                <p > <Link to="/" className={style.linkGeneral}>Todos os Itens </Link></p>
-                <p > <Link to="/" className={style.linkGeneral}> Novo Item</Link></p>
+                <p > <Link to="/produtos/all" className={style.linkGeneral}>Todos os Itens </Link></p>
+                <p > <Link to="/produtos/newitem" className={style.linkGeneral}> Novo Item</Link></p>
 
             </div>
         </>
