@@ -1,4 +1,4 @@
-import  { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 export default function useUtils() {
   const [base, setBase] = useState([]);
@@ -10,10 +10,13 @@ export default function useUtils() {
 
       setBase(jsonProducts);
     };
-    fetchData();
+    fetchData()
   }, []);
 
-  
-  return base;
 
+function teste(){
+  console.log("teste")
 }
+ return base
+}
+
