@@ -14,9 +14,7 @@ export default function useUtils() {
   }, []);
 
 
-function teste(){
-  console.log("teste")
-}
- return base
+
+ return {base}
 }
 

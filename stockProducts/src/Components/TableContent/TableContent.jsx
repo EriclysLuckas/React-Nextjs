@@ -1,9 +1,10 @@
 import style from "./TableContent.module.css";
 import Utils from '../../hooks/Utils';
 import { FaEye } from "react-icons/fa";
+import useBaseContext from "../../hooks/userBaseContext";
 
 export default function TableContent() {
-  const base = Utils()
+  const  {base} = useBaseContext();
   return (
 
     <div className={style.TableRec}>

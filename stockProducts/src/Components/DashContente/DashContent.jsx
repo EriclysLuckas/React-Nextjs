@@ -3,8 +3,17 @@ import Utils from '../../hooks/Utils';
 import useBaseContext from "../../hooks/userBaseContext";
 
 export default function DashContent() {
-  const base = useBaseContext();
-console.log(base)
+
+
+
+
+  const  {base} = useBaseContext();
+console.log("base:",base)
+
+
+
+
+
   const filteredProducts = base.filter(product => product.quantity < 5);
   const filteredProductsTotal = filteredProducts.length;
 
