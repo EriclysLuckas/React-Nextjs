@@ -3,7 +3,7 @@ import RootLayout from './pages/LayoutRoot';
 import { Home } from './pages/Home/Home';
 import ScreenItensGeneral from './pages/ScreenItensGeneral/ScreenItensGeneral';
 import TableGeneralItens from './Components/TableGeneralItens/TableGeneralItens';
-import FormItens from './Components/FormItem/FormItem';
+import FormItens from './Components/FormItens/AddItemForm';
 
 const router = createBrowserRouter([
   {
