@@ -1,7 +1,7 @@
 {
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Produto A",
       "category": "Categoria1",
       "quantity": 5,
@@ -9,7 +9,7 @@
       "desc": "teste"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Produto B",
       "category": "Categoria2",
       "quantity": 12,
@@ -17,7 +17,7 @@
       "desc": "teste"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Produto C",
       "category": "Categoria3",
       "quantity": 1,
@@ -25,20 +25,12 @@
       "desc": "teste"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Produto D",
       "category": "Categoria4",
       "quantity": 5,
       "price": 2.5,
       "desc": "teste"
-    },
-    {
-      "id": "e18d",
-      "name": "sdfs",
-      "quantity": 22,
-      "price": 2,
-      "category": "Categoria1",
-      "desc": "da"
     }
   ]
 }

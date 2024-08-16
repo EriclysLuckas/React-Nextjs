@@ -4,66 +4,50 @@ import { useState } from "react";
 
 
 export default function AddItemForm() {
+  const { addProduct } = useBaseContext()
+  const [formData, setFormData] = useState({
+    name: "",
+    quantity: "",
+    price: "",
+    category: "",
+    desc: "",
+  })
+  const onChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevData => ({
+      ...prevData,
+      [name]: value,
 
-
-  const {addProduct} = useBaseContext()
-
-const [formData, setFormData] = useState ({
-
-  name: "",
-  quantity: "",
-  price: "",
-  category: "",
-  desc: "",
-  
-})
-
-
-
-
-const onChange = (e) =>
-  {
-
-const {name, value} = e.target;
-setFormData(prevData => ({
-  ...prevData,
-  [name]: value,
-  
-}))
+    }))
   }
+  const onSubmit = async (e) => {
+    e.preventDefault()
+    if (!formData.name) {
+      console.error("Nome é obrigatório");
+    }
 
 
-  const onSubmit = async (e) =>{
-  e.preventDefault()
-  
-  if (!formData.name) {
-    console.error("Nome é obrigatório");
-    return;
-  }
-  
-  const newProduct = {
-    name: formData.name,
-    quantity: Number(formData.quantity),
-    price: Number(formData.price),
-    category: formData.category,
-    desc: formData.desc,
-  }
 
+
+    const newProduct = {
+      name: formData.name,
+      quantity: Number(formData.quantity),
+      price: Number(formData.price),
+      category: formData.category,
+      desc: formData.desc,
+    }
     await addProduct(newProduct);
-
-      setFormData({
-        name: "",
-        quantity: "",
-        price: "",
-        category: "",
-        message: "",
-      });
-    };
+    setFormData({
+      name: "",
+      quantity: "",
+      price: "",
+      category: "",
+      message: "",
+    });
 
 
-  
-  
-  
+  };
+
 
 
 
@@ -71,59 +55,49 @@ setFormData(prevData => ({
 
   return (
     <section className={style.formcarryContainer}>
-      <form onSubmit = {onSubmit}>
+      <form onSubmit={onSubmit}>
         <div className={style.formCarryBlock1}>
           <div className={style.boxinput}>
             <label htmlFor="nameForm">Nome</label>
-            <input 
+            <input
               type="text"
               name="name"
               id="nameForm"
-              value ={formData.name}
-              onChange = {onChange}
+              value={formData.name}
+              onChange={onChange}
               required
-              />
+            />
           </div>
           <div className={style.boxinput}>
-
             <label htmlFor="quantityForm">Quantidade</label>
-            <input 
-            
-            
-            type="number"
-            name="quantity"
-            id="quantityForm"
-            value ={formData.quantity}
-            onChange = {onChange}
-
-            required
-            
+            <input
+              type="number"
+              name="quantity"
+              id="quantityForm"
+              value={formData.quantity}
+              onChange={onChange}
+              required
             />
           </div>
-
           <div className={style.boxinput}>
-
             <label htmlFor="precoForm">Preço</label>
-            <input 
-                onChange = {onChange}
-                type="text"
-                name="price"
-                id="priceForm"
-                value ={formData.price}
-                required
+            <input
+              onChange={onChange}
+              type="text"
+              name="price"
+              id="priceForm"
+              value={formData.price}
+              required
             />
           </div>
-
-
           <div className={style.boxinput}>
-
             <label htmlFor="categorySelect">Categoria do Produto</label>
-            <select 
-                onChange = {onChange}
-                name="category"
-                id="categoryForm"
-                value ={formData.category}
-                required
+            <select
+              onChange={onChange}
+              name="category"
+              id="categoryForm"
+              value={formData.category}
+              required
             >
               <option value="" >Selecione a Categoria</option>
               <option value="Categoria1">Categoria 1</option>
@@ -133,23 +107,20 @@ setFormData(prevData => ({
             </select>
           </div>
         </div>
-
         <div className={style.formCarryBlock2}>
           <label htmlFor="descricao">Descrição</label>
-          <textarea 
-              onChange = {onChange}
-              name="desc"
-              id="descForm"
-              value ={formData.desc}
-              required
+          <textarea
+            onChange={onChange}
+            name="desc"
+            id="descForm"
+            value={formData.desc}
+            required
           ></textarea>
         </div>
-
         <div className={style.formCarryBlock}>
           <button type="submit">Salvar</button>
         </div>
       </form>
-
     </section>
   )
 }

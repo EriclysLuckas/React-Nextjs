@@ -29,6 +29,13 @@ export default function useUtils() {
     fetchData()
   }
 
+
+
+
+
+
+  
+
  
  return {base, addProduct}
 }
