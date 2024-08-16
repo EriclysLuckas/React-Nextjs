@@ -1,31 +1,33 @@
 .formcarryContainer {
   display: flex;
   justify-content: center;
-  align-items: center;
   min-height: 100vh;
   padding: 20px;
-
+  width: 100%;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 form {
-  border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   width: 100%;
-  max-width: 500px;
 }
 
-.formCarryBlock {
-  margin-bottom: 15px;
+.formCarryBlock1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+  margin-bottom: 2%;
+}
+.boxinput{
+  flex: 1 1 20%; 
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
-.formCarryBlock label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-  font-size: 16px;
-}
 
 input[type="text"],
 input[type="number"],
@@ -36,11 +38,17 @@ textarea {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  outline: none;
 }
 
 textarea {
   resize: vertical;
   min-height: 100px;
+}
+.formCarryBlock{
+  position: absolute;
+  right: 6%;
+  margin-top: 2%;
 }
 
 button {
@@ -56,3 +64,5 @@ button {
 button:hover {
   background-color: #0056b3;
 }
+
+

@@ -3,35 +3,43 @@
     { 
       "id": 1, 
       "name": "Produto A",
-      "category": "Cola",
+      "category": "Categoria1",
       "model": "teste" ,
       "quantity": 5,
-      "size": 14
+      "size": 14,
+      "price":2.5
+
     },
     { 
       "id": 2, 
       "name": "Produto B",
-      "category": "cilios 1",
+      "category": "Categoria2",
       "model": "teste" ,
       "quantity": 12,
-      "size": 13
+      "size": 13,
+      "price":2.5
+
     }  ,
       { 
       "id": 3, 
       "name": "Produto C",
-      "category": "cilios 2",
+      "category": "Categoria3",
       "model": "teste" ,
       "quantity": 1,
-      "size": 2
+      "size": 2,
+      "price":2.5
+
     },
     { 
       "id": 4, 
       "name": "Produto D",
-      "category": "cilios 3",
+      "category": "Categoria4",
       "model": "teste" ,
       "quantity": 5,
-      "size": 2
+      "size": 2,
+      "price":2.5
     }
+  
   
   
     
