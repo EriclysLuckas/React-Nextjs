@@ -1,49 +1,44 @@
 {
   "products": [
-    { 
-      "id": 1, 
+    {
+      "id": 1,
       "name": "Produto A",
       "category": "Categoria1",
-      "model": "teste" ,
       "quantity": 5,
-      "size": 14,
-      "price":2.5
-
+      "price": 2.5,
+      "desc": "teste"
     },
-    { 
-      "id": 2, 
+    {
+      "id": 2,
       "name": "Produto B",
       "category": "Categoria2",
-      "model": "teste" ,
       "quantity": 12,
-      "size": 13,
-      "price":2.5
-
-    }  ,
-      { 
-      "id": 3, 
+      "price": 2.5,
+      "desc": "teste"
+    },
+    {
+      "id": 3,
       "name": "Produto C",
       "category": "Categoria3",
-      "model": "teste" ,
       "quantity": 1,
-      "size": 2,
-      "price":2.5
-
+      "price": 2.5,
+      "desc": "teste"
     },
-    { 
-      "id": 4, 
+    {
+      "id": 4,
       "name": "Produto D",
       "category": "Categoria4",
-      "model": "teste" ,
       "quantity": 5,
-      "size": 2,
-      "price":2.5
+      "price": 2.5,
+      "desc": "teste"
+    },
+    {
+      "id": "e18d",
+      "name": "sdfs",
+      "quantity": 22,
+      "price": 2,
+      "category": "Categoria1",
+      "desc": "da"
     }
-  
-  
-  
-    
-    
   ]
- 
 }

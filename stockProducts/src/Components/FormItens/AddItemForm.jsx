@@ -1,35 +1,130 @@
 import style from "./AddItemForm.module.css"
+import useBaseContext from "../../hooks/userBaseContext";
+import { useState } from "react";
 
 
 export default function AddItemForm() {
 
 
+  const {addProduct} = useBaseContext()
+
+const [formData, setFormData] = useState ({
+
+  name: "",
+  quantity: "",
+  price: "",
+  category: "",
+  desc: "",
+  
+})
+
+
+
+
+const onChange = (e) =>
+  {
+
+const {name, value} = e.target;
+setFormData(prevData => ({
+  ...prevData,
+  [name]: value,
+  
+}))
+  }
+
+
+  const onSubmit = async (e) =>{
+  e.preventDefault()
+  
+  if (!formData.name) {
+    console.error("Nome é obrigatório");
+    return;
+  }
+  
+  const newProduct = {
+    name: formData.name,
+    quantity: Number(formData.quantity),
+    price: Number(formData.price),
+    category: formData.category,
+    desc: formData.desc,
+  }
+
+    await addProduct(newProduct);
+
+      setFormData({
+        name: "",
+        quantity: "",
+        price: "",
+        category: "",
+        message: "",
+      });
+    };
+
+
+  
+  
+  
+
+
+
+
 
   return (
     <section className={style.formcarryContainer}>
-      <form action="#" method="POST">
+      <form onSubmit = {onSubmit}>
         <div className={style.formCarryBlock1}>
           <div className={style.boxinput}>
             <label htmlFor="nameForm">Nome</label>
-            <input type="text" name="name" id="nameForm" required />
+            <input 
+              type="text"
+              name="name"
+              id="nameForm"
+              value ={formData.name}
+              onChange = {onChange}
+              required
+              />
           </div>
           <div className={style.boxinput}>
 
             <label htmlFor="quantityForm">Quantidade</label>
-            <input type="number" name="quantity" id="quantityForm" />
+            <input 
+            
+            
+            type="number"
+            name="quantity"
+            id="quantityForm"
+            value ={formData.quantity}
+            onChange = {onChange}
+
+            required
+            
+            />
           </div>
 
           <div className={style.boxinput}>
 
             <label htmlFor="precoForm">Preço</label>
-            <input type="number" name="price" id="precoForm" />
+            <input 
+                onChange = {onChange}
+                type="text"
+                name="price"
+                id="priceForm"
+                value ={formData.price}
+                required
+            />
           </div>
 
 
           <div className={style.boxinput}>
 
             <label htmlFor="categorySelect">Categoria do Produto</label>
-            <select name="category" id="categorySelect" >
+            <select 
+                onChange = {onChange}
+                name="category"
+                id="categoryForm"
+                value ={formData.category}
+                required
+            >
               <option value="" >Selecione a Categoria</option>
               <option value="Categoria1">Categoria 1</option>
               <option value="Categoria2">Categoria 2</option>
@@ -41,7 +136,13 @@ export default function AddItemForm() {
 
         <div className={style.formCarryBlock2}>
           <label htmlFor="descricao">Descrição</label>
-          <textarea name="message" id="descricao"></textarea>
+          <textarea 
+              onChange = {onChange}
+              name="desc"
+              id="descForm"
+              value ={formData.desc}
+              required
+          ></textarea>
         </div>
 
         <div className={style.formCarryBlock}>
