@@ -1,9 +1,12 @@
 import style from "./AddItemForm.module.css"
 import useBaseContext from "../../hooks/userBaseContext";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"; 
 
 
 export default function AddItemForm() {
+  const navigate = useNavigate(); // Inicializa useNavigate
+
   const { addProduct } = useBaseContext()
   const [formData, setFormData] = useState({
     name: "",
@@ -27,14 +30,26 @@ export default function AddItemForm() {
     }
 
 
+    // const now = new Date();
+    // const formattedDate = now.toLocaleString('pt-BR', {
+    //   year: 'numeric',
+    //   month: '2-digit',
+    //   day: '2-digit',
+    //   hour: '2-digit',
+    //   minute: '2-digit',
+    //   second: '2-digit',
+    //   hour12:   false,
+    // });
 
 
+    
     const newProduct = {
       name: formData.name,
       quantity: Number(formData.quantity),
       price: Number(formData.price),
       category: formData.category,
       desc: formData.desc,
+      // date: formattedDate,
     }
     await addProduct(newProduct);
     setFormData({
@@ -44,7 +59,7 @@ export default function AddItemForm() {
       category: "",
       message: "",
     });
-
+    navigate("/produtos/all");
 
   };
 

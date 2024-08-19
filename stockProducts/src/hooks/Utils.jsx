@@ -31,12 +31,21 @@ export default function useUtils() {
 
 
 
+  const deleteProducts = async (id) => {
 
+    await fetch(`http://localhost:3000/products/${id}`, {
+      method: "DELETE",
+      headers: {"Content-Type": "application/json"}
+
+
+    })
+    fetchData()
+  }
 
 
   
 
  
- return {base, addProduct}
+ return {base, addProduct, deleteProducts}
 }
 

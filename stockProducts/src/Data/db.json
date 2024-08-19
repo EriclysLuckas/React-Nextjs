@@ -1,36 +1,12 @@
 {
   "products": [
     {
-      "id": "1",
-      "name": "Produto A",
-      "category": "Categoria1",
-      "quantity": 5,
-      "price": 2.5,
-      "desc": "teste"
-    },
-    {
-      "id": "2",
-      "name": "Produto B",
-      "category": "Categoria2",
-      "quantity": 12,
-      "price": 2.5,
-      "desc": "teste"
-    },
-    {
-      "id": "3",
-      "name": "Produto C",
-      "category": "Categoria3",
+      "id": "cea2",
+      "name": "rywa",
       "quantity": 1,
-      "price": 2.5,
-      "desc": "teste"
-    },
-    {
-      "id": "4",
-      "name": "Produto D",
-      "category": "Categoria4",
-      "quantity": 5,
-      "price": 2.5,
-      "desc": "teste"
+      "price": 3,
+      "category": "Categoria1",
+      "desc": "afascasca"
     }
   ]
 }

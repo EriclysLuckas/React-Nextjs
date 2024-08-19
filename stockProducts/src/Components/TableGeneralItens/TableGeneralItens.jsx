@@ -6,8 +6,13 @@ import style from "../TableGeneralItens/TableGeneralItens.module.css"
 
 export default function TableGeneralItens() {
 
-  const { base } = useBaseContext()
+  const { base, deleteProducts } = useBaseContext()
 
+
+
+  const deleting = (id)=>{
+    deleteProducts(id)
+  }
   return (
     <table className={style.TableGeneralItens}>
 
@@ -33,7 +38,7 @@ export default function TableGeneralItens() {
             <td className={style.tdBtnAll}>
               <button className={style.btnProducts}><FaEye /></button>
               <button className={`${style.btnProducts} ${style.edit}`}><FaPencilAlt /></button>
-              <button className={`${style.btnProducts} ${style.trash}`}><FaTrashAlt /></button>
+              <button className={`${style.btnProducts} ${style.trash}`} onClick = {() =>deleting(products.id)}><FaTrashAlt /></button>
             </td>
           </tr>
         ))}
