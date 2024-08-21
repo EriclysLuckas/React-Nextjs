@@ -27,22 +27,7 @@ export default function AddItemForm() {
     e.preventDefault()
     if (!formData.name) {
       console.error("Nome é obrigatório");
-    }
-
-
-    // const now = new Date();
-    // const formattedDate = now.toLocaleString('pt-BR', {
-    //   year: 'numeric',
-    //   month: '2-digit',
-    //   day: '2-digit',
-    //   hour: '2-digit',
-    //   minute: '2-digit',
-    //   second: '2-digit',
-    //   hour12:   false,
-    // });
-
-
-    
+    }    
     const newProduct = {
       name: formData.name,
       quantity: Number(formData.quantity),
@@ -98,7 +83,7 @@ export default function AddItemForm() {
             <label htmlFor="precoForm">Preço</label>
             <input
               onChange={onChange}
-              type="text"
+              type="number"
               name="price"
               id="priceForm"
               value={formData.price}

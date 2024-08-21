@@ -1,18 +1,12 @@
 import useBaseContext from "../../hooks/userBaseContext";
-import { FaEye, FaTrashAlt, FaPencilAlt } from "react-icons/fa";
+import { FaEye } from "react-icons/fa";
 import style from "../TableGeneralItens/TableGeneralItens.module.css"
-
+import { ButtonAction } from "../ButtonAction/ButtonAction";
 
 
 export default function TableGeneralItens() {
 
-  const { base, deleteProducts } = useBaseContext()
-
-
-
-  const deleting = (id)=>{
-    deleteProducts(id)
-  }
+  const { base } = useBaseContext()
   return (
     <table className={style.TableGeneralItens}>
 
@@ -37,8 +31,8 @@ export default function TableGeneralItens() {
             <td> {products.category}</td>
             <td className={style.tdBtnAll}>
               <button className={style.btnProducts}><FaEye /></button>
-              <button className={`${style.btnProducts} ${style.edit}`}><FaPencilAlt /></button>
-              <button className={`${style.btnProducts} ${style.trash}`} onClick = {() =>deleting(products.id)}><FaTrashAlt /></button>
+              <ButtonAction type="update" productId={products.id} />
+              <ButtonAction type="delete" productId={products.id} />
             </td>
           </tr>
         ))}

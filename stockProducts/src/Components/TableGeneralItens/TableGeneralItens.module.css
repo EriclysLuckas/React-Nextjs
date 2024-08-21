@@ -61,12 +61,8 @@ tbody tr td button {
   display: flex;
   justify-content: center;
 }
-.trash{
-  background: #cf0000;
-}
-.edit{
-  background-color: #046f5d;
-}
+
+
 .name{
   width: 30%;
 }

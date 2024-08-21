@@ -78,3 +78,10 @@ button:hover {
 }
 
 
+.formCarryBlock2{
+  height: 5rem;
+  margin-bottom: 1ch;
+}
+.formCarryBlock2 textarea{
+height: 100%;
+}
