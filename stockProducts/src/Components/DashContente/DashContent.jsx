@@ -1,6 +1,5 @@
 import style from "./DashContent.module.css";
 import useBaseContext from "../../hooks/userBaseContext";
-
 export default function DashContent() {
 
 
@@ -20,6 +19,7 @@ console.log("base:",base)
   const totalProducts = base.length;
   
   return (
+
     <div className={style.contentDash}>
       <h1>Dashboard</h1>
       <div className={style.dashboard}>
