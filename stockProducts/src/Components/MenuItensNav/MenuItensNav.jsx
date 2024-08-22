@@ -1,7 +1,9 @@
 import style from "./MenuItensNav.module.css"
 import { Link } from "react-router-dom"
-
+import {useNavigate} from "react-router-dom"
 export default function MenuItensGeneralScreen() {
+
+const navigate = useNavigate()
 
 
     return (
