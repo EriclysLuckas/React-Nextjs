@@ -1,12 +1,20 @@
 {
   "products": [
     {
-      "id": "6a3f",
-      "name": "6hdfds3",
-      "quantity": 3462,
-      "price": 623,
+      "id": "829e",
+      "name": "Teste",
+      "quantity": 123,
+      "price": 123,
+      "category": "Categoria2",
+      "desc": "Taskmasmfasflsafdasf as"
+    },
+    {
+      "id": "6569",
+      "name": "afasfassc",
+      "quantity": 2321,
+      "price": 214,
       "category": "Categoria3",
-      "desc": "dsdgsdg"
+      "desc": "acacasca"
     }
   ]
 }

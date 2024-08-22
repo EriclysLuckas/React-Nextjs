@@ -14,9 +14,7 @@ export const ButtonAction = ({ type, productId }) => {
       console.log('teste')
 
     }
-    else if(type === 'view'){
-      console.log("view active")
-    }
+  
   };
 
   return (

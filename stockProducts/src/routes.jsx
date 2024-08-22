@@ -4,7 +4,7 @@ import { Home } from './pages/Home/Home';
 import ScreenItensGeneral from './pages/ScreenItensGeneral/ScreenItensGeneral';
 import TableGeneralItens from './Components/TableGeneralItens/TableGeneralItens';
 import FormItens from './Components/FormItens/AddItemForm';
-// import {TemplateProduct} from './pages/TemplateProduct/TemplateProduct'
+import {TemplateProduct} from './pages/TemplateProduct/TemplateProduct'
 const router = createBrowserRouter([
   {
     path: "/",
@@ -20,9 +20,11 @@ const router = createBrowserRouter([
           { index: true, element: <TableGeneralItens /> },
           { path: "all", element: <TableGeneralItens /> },
           { path: "newitem", element: <FormItens /> },
-          // { path: "produtos/:id", element: <TemplateProduct /> },
+          { path: ":id", element: <TemplateProduct /> },
         ],
-      }
+      },
+      
+
     ],
   },
 ]);
