@@ -6,7 +6,7 @@ export const TemplateProduct = () => {
 
   const { id } = useParams()
   const { getProductId } = useBaseContext() //CHAMA A FUNÇÃO QUE RETORNA O PRODUTO PELO ID
-  const [productsid, setProductsid] = useState(null)
+  const [productsid, setProductsid] = useState({})
   useEffect(() => {
     const fethcProductsId = async () => {
       const productsview = await getProductId(id)
@@ -22,7 +22,7 @@ export const TemplateProduct = () => {
 
   return (
     <>
- 
+    <p>{productsid.quantity}</p>
     </>
   )
 }
