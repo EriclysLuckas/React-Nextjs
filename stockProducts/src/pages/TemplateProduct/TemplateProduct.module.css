@@ -1,0 +1,25 @@
+.contentProductView{
+  width: 100%;
+  height: 100%;
+}
+.headerProductView{
+  display: flex;
+  width: 100%;
+  padding: 2%;
+  justify-content: space-between;
+}
+.NameProductView{
+font-size: 2rem;
+width: 90%;
+justify-content: center;
+display: flex;
+}
+.NameProductView span{
+  font-weight: 700;
+}
+.actionHeaderProductView{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 10%;  
+}

@@ -44,8 +44,9 @@ export default function useUtils() {
   
 
   const getProductId=  async (id) => {
+
     const response = await fetch(`http://localhost:3000/products/${id}`)
-    const products = response.json()
+    const products = await response.json()
     return products
   };
 

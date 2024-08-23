@@ -37,6 +37,7 @@ export const ButtonAction = ({ type, productId }) => {
     </button>
   );
 };
+
 ButtonAction.propTypes = {
   type: PropTypes.oneOf(['delete', 'update', 'view']).isRequired,
   productId: PropTypes.string.isRequired,

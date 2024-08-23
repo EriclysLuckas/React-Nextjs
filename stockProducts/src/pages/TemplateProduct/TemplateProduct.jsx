@@ -1,28 +1,53 @@
 import useBaseContext from "../../hooks/userBaseContext";
 import { useState, useEffect } from "react";
-import {  useParams } from "react-router-dom";
-
+import { useParams } from "react-router-dom";
+import styleProductView from "../TemplateProduct/TemplateProduct.module.css";
+import { ButtonAction } from '../../Components/ButtonAction/ButtonAction';
 export const TemplateProduct = () => {
 
-  const { id } = useParams()
-  const { getProductId } = useBaseContext() //CHAMA A FUNÇÃO QUE RETORNA O PRODUTO PELO ID
-  const [productsid, setProductsid] = useState({})
+  const { id } = useParams()                                  //UTILIZA O ID COMO PARAMS
+  const { getProductId } = useBaseContext()                   //CHAMA A FUNÇÃO QUE RETORNA O PRODUTO PELO ID
+  const [productsid, setProductsid] = useState({})            // CRIEI UM STATE PARA ARMAZENAR O PRODUTO
+
   useEffect(() => {
     const fethcProductsId = async () => {
-      const productsview = await getProductId(id)
-      setProductsid(productsview)
+      const productsview = await getProductId(id) // inicio uma const que aguarda o retorno do ID
+      setProductsid(productsview) //armazeno os produtos por id no state
     }
-    fethcProductsId()
+    fethcProductsId() //executo minha função
 
-
-  }, [id,getProductId])
-
-  console.log(productsid)
+  }, [id, getProductId])
 
 
   return (
-    <>
-    <p>{productsid.quantity}</p>
-    </>
+    <div className={styleProductView.contentProductView}>
+      <div className={styleProductView.headerProductView}>
+        <div className={styleProductView.NameProductView}>
+          <span > {productsid.name} </span>
+
+        </div>
+        {productsid && productsid.id ? (
+          <div className={styleProductView.actionHeaderProductView}>
+            <ButtonAction type="update" productId={productsid.id} />
+            <ButtonAction type="delete" productId={productsid.id} />
+          </div>
+        ) : (
+          null
+        )}
+
+
+
+
+
+
+
+      </div>
+
+      <div className={styleProductView.bodyProductView}>
+      
+      
+      </div>
+
+    </div>
   )
 }
