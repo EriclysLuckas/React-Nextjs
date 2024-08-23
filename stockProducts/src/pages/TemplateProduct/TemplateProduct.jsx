@@ -51,7 +51,9 @@ export const TemplateProduct = () => {
 
 
         </div>
-        <div className={styleProductView.descProductView}></div>
+        <div className={styleProductView.descProductView}>
+          <span>Descrição</span> <span>{productsid.desc}</span>
+        </div>
 
       </div>
 
