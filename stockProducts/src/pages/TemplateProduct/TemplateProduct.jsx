@@ -44,8 +44,15 @@ export const TemplateProduct = () => {
       </div>
 
       <div className={styleProductView.bodyProductView}>
-      
-      
+        <div className={styleProductView.contentCardsProductView}>
+          <div className={styleProductView.cardsProductView}>Categoria: {productsid.category}</div>
+          <div className={styleProductView.cardsProductView}>Quantidade em estoque: {productsid.quantity}</div>
+          <div className={styleProductView.cardsProductView}>Preço: R${productsid.price}      </div>
+
+
+        </div>
+        <div className={styleProductView.descProductView}></div>
+
       </div>
 
     </div>

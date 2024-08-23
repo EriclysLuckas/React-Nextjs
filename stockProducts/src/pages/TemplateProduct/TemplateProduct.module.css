@@ -23,3 +23,17 @@ display: flex;
   justify-content: start;
   gap: 10%;  
 }
+.contentCardsProductView{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.cardsProductView{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: 5ch;
+  margin-top: .5ch;
+  box-shadow: -1px 5px 30px 0px rgba(22, 22, 22, 0.74);
+}
