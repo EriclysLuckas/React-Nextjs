@@ -1,6 +1,6 @@
 import style from "./TableContent.module.css";
-import { FaEye } from "react-icons/fa";
 import useBaseContext from "../../hooks/userBaseContext";
+import { ButtonAction } from '../ButtonAction/ButtonAction';
 
 export default function TableContent() {
   const  {base} = useBaseContext();
@@ -23,7 +23,8 @@ export default function TableContent() {
 
             <tr key={products.id} >
               <td>{products.name}</td>
-              <td><button className={style.btnProducts}><FaEye /></button></td>
+              <td><ButtonAction type="view" productId={products.id} />
+              </td>
 
             </tr>
           ))}

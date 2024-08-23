@@ -1,15 +1,10 @@
 import useBaseContext from "../../hooks/userBaseContext";
-import { FaEye } from "react-icons/fa";
 import style from "../TableGeneralItens/TableGeneralItens.module.css"
 import { ButtonAction } from "../ButtonAction/ButtonAction";
-import { useNavigate  } from "react-router-dom";
 
 export default function TableGeneralItens() {
-  const navigate = useNavigate()
   const { base } = useBaseContext()
-  const handleView = (id) => {
-    navigate(`/produtos/${id}`); 
-  };
+
   return (
     <table className={style.TableGeneralItens}>
       <thead>
@@ -30,7 +25,8 @@ export default function TableGeneralItens() {
             <td>{products.quantity}</td>
             <td> {products.category}</td>
             <td className={style.tdBtnAll}>
-              <button className={style.btnProducts} onClick = {()=> handleView(products.id)}><FaEye /></button>
+              {/* <button className={style.btnProducts} onClick = {()=> handleView(products.id)}><FaEye /></button> */}
+              <ButtonAction type="view" productId={products.id} />
               <ButtonAction type="update" productId={products.id} />
               <ButtonAction type="delete" productId={products.id} />
             </td>

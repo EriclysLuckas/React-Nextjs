@@ -2,6 +2,7 @@
 
 
 .btnProducts, .btnProducts{
+  background-color: red;
 
   &:before{
     width: 101%;
@@ -30,4 +31,6 @@
 .edit{
   background-color: #046f5d;
 }
-
+.view{
+  background:  rgb(0, 101, 252);
+}

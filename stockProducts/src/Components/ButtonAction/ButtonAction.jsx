@@ -1,12 +1,19 @@
 import btnStyle from "../ButtonAction/ButtonAction.module.css";
-import { FaTrashAlt, FaPencilAlt } from "react-icons/fa";
+import { FaTrashAlt, FaPencilAlt, FaEye } from "react-icons/fa";
 import useBaseContext from "../../hooks/userBaseContext";
-//eslint-disable-next-line
+import PropTypes from 'prop-types'; 
+import { useNavigate } from "react-router-dom";
+
 export const ButtonAction = ({ type, productId }) => {
-  const { deleteProducts } = useBaseContext();
+  const { deleteProducts, } = useBaseContext();
+
+
+   const navigate = useNavigate();
+
+
 
   const handleAction = () => {
-    
+
     if (type === 'delete') {
       deleteProducts(productId);
     } else if (type === 'update') {
@@ -14,12 +21,24 @@ export const ButtonAction = ({ type, productId }) => {
       console.log('teste')
 
     }
-  
-  };
+      else if (type === 'view') {
 
+        navigate(`/produtos/${productId}`); 
+     }
+  }
   return (
-    <button className={`${btnStyle.btnProducts} ${type === 'delete' ? btnStyle.trash : btnStyle.edit}`} onClick={handleAction}>
-      {type === 'delete' ? <FaTrashAlt /> : <FaPencilAlt />}
+    <button className={`${btnStyle.btnProducts} ${type === 'delete' ? btnStyle.trash : type === 'update' ? btnStyle.edit : type === 'view' ? btnStyle.view : null}`} onClick={handleAction}>
+      {
+        type === 'delete' ? <FaTrashAlt /> :
+          type === 'update' ? <FaPencilAlt /> :
+            type === 'view' ? <FaEye /> :
+              null
+      }
     </button>
   );
+};
+ButtonAction.propTypes = {
+  type: PropTypes.oneOf(['delete', 'update', 'view']).isRequired,
+  productId: PropTypes.string.isRequired,
+
 };
