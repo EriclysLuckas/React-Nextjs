@@ -1,20 +1,13 @@
 {
   "products": [
     {
-      "id": "829e",
-      "name": "Teste",
+      "id": "ef7c",
+      "name": "teste",
       "quantity": 123,
       "price": 123,
-      "category": "Categoria2",
-      "desc": "Taskmasmfasflsafdasf as"
-    },
-    {
-      "id": "0f5c",
-      "name": "teste 2 ",
-      "quantity": 3,
-      "price": 5,
-      "category": "Categoria2",
-      "desc": "teste de page"
+      "category": "Categoria3",
+      "desc": "afacfaseadsacascasasdasdascas",
+      "date": "2024-08-28 | 14:41"
     }
   ]
 }

@@ -11,10 +11,10 @@ export const TemplateProduct = () => {
 
   useEffect(() => {
     const fethcProductsId = async () => {
-      const productsview = await getProductId(id) // inicio uma const que aguarda o retorno do ID
-      setProductsid(productsview) //armazeno os produtos por id no state
+      const productsview = await getProductId(id)             // inicio uma const que aguarda o retorno do ID
+      setProductsid(productsview)                             //armazeno os produtos por id no state
     }
-    fethcProductsId() //executo minha função
+    fethcProductsId()                                         //executo minha função
 
   }, [id, getProductId])
 
@@ -45,17 +45,20 @@ export const TemplateProduct = () => {
 
       <div className={styleProductView.bodyProductView}>
         <div className={styleProductView.contentCardsProductView}>
-          <div className={styleProductView.cardsProductView}>Categoria: {productsid.category}</div>
-          <div className={styleProductView.cardsProductView}>Quantidade em estoque: {productsid.quantity}</div>
-          <div className={styleProductView.cardsProductView}>Preço: R${productsid.price}      </div>
+          <div className={styleProductView.cardsProductView}> <strong>Categoria: </strong> {productsid.category}</div>
+          <div className={styleProductView.cardsProductView}><strong>Quantidade em estoque: </strong> {productsid.quantity}</div>
+          <div className={styleProductView.cardsProductView}> <strong>Preço: </strong> R${productsid.price}      </div>
 
 
         </div>
         <div className={styleProductView.descProductView}>
-          <span>Descrição</span> <span>{productsid.desc}</span>
+          <span ><strong>Descrição: </strong> </span> <span>{productsid.desc}</span>
         </div>
 
       </div>
+
+      <span className = {styleProductView.date}>Cadastrado em {productsid.date}</span>
+
 
     </div>
   )

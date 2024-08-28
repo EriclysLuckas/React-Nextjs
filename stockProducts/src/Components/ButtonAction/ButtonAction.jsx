@@ -16,6 +16,8 @@ export const ButtonAction = ({ type, productId }) => {
 
     if (type === 'delete') {
       deleteProducts(productId);
+      navigate(`/produtos`); 
+
     } else if (type === 'update') {
 
       console.log('teste')

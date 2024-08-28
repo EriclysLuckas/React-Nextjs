@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import style from "./TableContent.module.css";
-import Utils from '../../hooks/Utils';
-import { FaEye } from "react-icons/fa";
+import { ButtonAction } from '../ButtonAction/ButtonAction';
+
 import useBaseContext from "../../hooks/userBaseContext";
 
 
@@ -28,7 +28,7 @@ export default function TableContentF() {
             <tr key={products.id} className={style.trTableF}>
               <td>{products.name}</td>
               <td>{products.quantity}</td>
-              <td><button className={style.btnProducts}><FaEye /></button></td>
+              <td><ButtonAction type="view" productId={products.id} /></td>
             </tr>
           ))}
 

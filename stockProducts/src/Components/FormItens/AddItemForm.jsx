@@ -14,6 +14,7 @@ export default function AddItemForm() {
     price: "",
     category: "",
     desc: "",
+    date: ""
   })
   const onChange = (e) => {
     const { name, value } = e.target;
@@ -23,18 +24,33 @@ export default function AddItemForm() {
 
     }))
   }
+
+  const formatDate = (date) => {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');         // Adiciona o zero à esquerda
+    const day = String(date.getDate()).padStart(2, '0');               // Adiciona o zero à esquerda
+    const hours = String(date.getHours()).padStart(2, '0');            // Adiciona o zero à esquerda
+    const minutes = String(date.getMinutes()).padStart(2, '0');       // Adiciona o zero à esquerda
+    return `${year}-${month}-${day} | ${hours}:${minutes}`;                               // Formato YYYY-MM-DD
+  };
+
+  const currentDate = new Date();                                  // Obtém a data atual
+  const formattedDate = formatDate(currentDate);                  // Formata a data
+
   const onSubmit = async (e) => {
     e.preventDefault()
     if (!formData.name) {
       console.error("Nome é obrigatório");
-    }    
+    }  
+    
+    
     const newProduct = {
       name: formData.name,
       quantity: Number(formData.quantity),
       price: Number(formData.price),
       category: formData.category,
       desc: formData.desc,
-      // date: formattedDate,
+      date: formattedDate,
     }
     await addProduct(newProduct);
     setFormData({
