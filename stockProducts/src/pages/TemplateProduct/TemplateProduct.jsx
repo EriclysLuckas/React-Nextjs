@@ -50,7 +50,7 @@ export const TemplateProduct = () => {
 
       </div>
 
-      <span className = {styleProductView.date}>Cadastrado em {productsid.date}</span>
+      <span className = {styleProductView.date}>Última atualização {productsid.date}</span>
 
 
     </div>

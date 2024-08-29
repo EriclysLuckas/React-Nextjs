@@ -46,6 +46,8 @@ const formattedDate = formatDate(currentDate);
               date: productsForGet.date || formattedDate,
             });
           }
+          navigate("/produtos/all");
+
       };
       fetchProduct();
     }
