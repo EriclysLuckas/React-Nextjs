@@ -1,11 +1,12 @@
 import style from "./AddItemForm.module.css"
 import useBaseContext from "../../hooks/userBaseContext";
-import { useState } from "react";
+import { useState, useParams } from "react";
 import { useNavigate } from "react-router-dom"; 
 
 
 export default function AddItemForm() {
   const navigate = useNavigate(); // Inicializa useNavigate
+  // const {id} = useParams();
 
   const { addProduct } = useBaseContext()
   const [formData, setFormData] = useState({
