@@ -20,8 +20,7 @@ export const ButtonAction = ({ type, productId }) => {
 
     } else if (type === 'update') {
 
-      console.log('teste')
-
+      navigate(`/produtos/update/${productId}`)
     }
       else if (type === 'view') {
 

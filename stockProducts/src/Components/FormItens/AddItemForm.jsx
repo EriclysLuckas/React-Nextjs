@@ -1,74 +1,114 @@
-import style from "./AddItemForm.module.css"
+import style from "./AddItemForm.module.css";
 import useBaseContext from "../../hooks/userBaseContext";
-import { useState, useParams } from "react";
-import { useNavigate } from "react-router-dom"; 
-
+import { useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function AddItemForm() {
+  const { id } = useParams(); // Obtém o ID do produto da URL, se disponível
   const navigate = useNavigate(); // Inicializa useNavigate
-  // const {id} = useParams();
-
-  const { addProduct } = useBaseContext()
+  const { addProduct, updateProduct, getProductId  } = useBaseContext();
+  
+ // Formata a data atual
+ const formatDate = (date) => {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  const hours = String(date.getHours()).padStart(2, '0');
+  const minutes = String(date.getMinutes()).padStart(2, '0');
+  return `${year}-${month}-${day} | ${hours}:${minutes}`;
+};
+const currentDate = new Date();
+const formattedDate = formatDate(currentDate);
+  // Estado para armazenar dados do formulário
   const [formData, setFormData] = useState({
     name: "",
     quantity: "",
     price: "",
     category: "",
     desc: "",
-    date: ""
-  })
+    date: "",
+  });
+  const buttonFormText = id ? "Atualizar" : "Salvar"
+
+
+    // Se um ID for fornecido, busca os dados do produto e preenche o formulário
+    if (id) {
+
+      const fetchProduct = async () => {
+          const productsForGet = await getProductId(id); // Busca o produto pelo ID
+          if (productsForGet) {
+            setFormData({
+              name: productsForGet.name || "",
+              quantity: productsForGet.quantity || "",
+              price: productsForGet.price || "",
+              category: productsForGet.category || "",
+              desc: productsForGet.desc || "",
+              date: productsForGet.date || formattedDate,
+            });
+          }
+      };
+      fetchProduct();
+    }
+ 
+  
+
+  // Atualiza o estado do formulário conforme o usuário digita
   const onChange = (e) => {
     const { name, value } = e.target;
     setFormData(prevData => ({
       ...prevData,
       [name]: value,
-
-    }))
-  }
-
-  const formatDate = (date) => {
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0');         // Adiciona o zero à esquerda
-    const day = String(date.getDate()).padStart(2, '0');               // Adiciona o zero à esquerda
-    const hours = String(date.getHours()).padStart(2, '0');            // Adiciona o zero à esquerda
-    const minutes = String(date.getMinutes()).padStart(2, '0');       // Adiciona o zero à esquerda
-    return `${year}-${month}-${day} | ${hours}:${minutes}`;                               // Formato YYYY-MM-DD
+    }));
   };
 
-  const currentDate = new Date();                                  // Obtém a data atual
-  const formattedDate = formatDate(currentDate);                  // Formata a data
-
+ 
+  // Lida com o envio do formulário
   const onSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     if (!formData.name) {
       console.error("Nome é obrigatório");
-    }  
-    
-    
-    const newProduct = {
+      return;
+    }
+
+    const productData = {
       name: formData.name,
       quantity: Number(formData.quantity),
       price: Number(formData.price),
       category: formData.category,
       desc: formData.desc,
       date: formattedDate,
+    };
+
+
+
+
+
+
+
+
+
+
+
+if (id) {
+      // Atualiza o produto existente
+      await updateProduct(id, productData);
+    } else {
+      // Adiciona um novo produto
+      await addProduct(productData);
     }
-    await addProduct(newProduct);
+
+
     setFormData({
       name: "",
       quantity: "",
       price: "",
       category: "",
-      message: "",
+      desc: "",
+      date: "",
     });
+
     navigate("/produtos/all");
-
   };
-
-
-
-
-
 
   return (
     <section className={style.formcarryContainer}>
@@ -97,18 +137,18 @@ export default function AddItemForm() {
             />
           </div>
           <div className={style.boxinput}>
-            <label htmlFor="precoForm">Preço</label>
+            <label htmlFor="priceForm">Preço</label>
             <input
-              onChange={onChange}
               type="number"
               name="price"
               id="priceForm"
               value={formData.price}
+              onChange={onChange}
               required
             />
           </div>
           <div className={style.boxinput}>
-            <label htmlFor="categorySelect">Categoria do Produto</label>
+            <label htmlFor="categoryForm">Categoria do Produto</label>
             <select
               onChange={onChange}
               name="category"
@@ -116,7 +156,7 @@ export default function AddItemForm() {
               value={formData.category}
               required
             >
-              <option value="" >Selecione a Categoria</option>
+              <option value="">Selecione a Categoria</option>
               <option value="Categoria1">Categoria 1</option>
               <option value="Categoria2">Categoria 2</option>
               <option value="Categoria3">Categoria 3</option>
@@ -125,7 +165,7 @@ export default function AddItemForm() {
           </div>
         </div>
         <div className={style.formCarryBlock2}>
-          <label htmlFor="descricao">Descrição</label>
+          <label htmlFor="descForm">Descrição</label>
           <textarea
             onChange={onChange}
             name="desc"
@@ -135,9 +175,9 @@ export default function AddItemForm() {
           ></textarea>
         </div>
         <div className={style.formCarryBlock}>
-          <button type="submit">Salvar</button>
+          <button type="submit">{buttonFormText}</button>
         </div>
       </form>
     </section>
-  )
+  );
 }

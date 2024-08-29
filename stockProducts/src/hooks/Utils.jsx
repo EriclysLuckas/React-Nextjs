@@ -47,10 +47,24 @@ export default function useUtils() {
 
     const response = await fetch(`http://localhost:3000/products/${id}`)
     const products = await response.json()
+
+    
     return products
   };
 
- 
- return {base, addProduct, deleteProducts, getProductId}
+
+  // Função para atualizar um produto
+  const updateProduct = async (id, updatedProduct) => {
+    await fetch(`http://localhost:3000/products/${id}`, {
+      method: "PATCH", 
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(updatedProduct),
+    });
+    fetchData(); // Atualiza a lista de produtos após a atualização
+  };
+
+ return {base, addProduct, deleteProducts, getProductId, updateProduct }
 }
 

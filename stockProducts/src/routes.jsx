@@ -21,6 +21,8 @@ const router = createBrowserRouter([
           { path: "all", element: <TableGeneralItens /> },
           { path: "newitem", element: <FormItens /> },
           { path: ":id", element: <TemplateProduct /> },
+          { path: "update/:id", element: <FormItens /> },
+
         ],
       },
       

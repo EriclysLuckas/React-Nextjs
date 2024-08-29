@@ -34,13 +34,6 @@ export const TemplateProduct = () => {
         ) : (
           null
         )}
-
-
-
-
-
-
-
       </div>
 
       <div className={styleProductView.bodyProductView}>
