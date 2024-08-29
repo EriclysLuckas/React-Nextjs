@@ -12,7 +12,7 @@ export default function HeaderPage() {
         </div>
         <div className={style.navHeader}>
         <p > <Link to="/home" >Inicio</Link></p>
-          <p > <Link to="/produtos"> Produtos</Link></p>
+          <p > <Link to="/produtos/all"> Produtos</Link></p>
 
         </div>
       </div>
