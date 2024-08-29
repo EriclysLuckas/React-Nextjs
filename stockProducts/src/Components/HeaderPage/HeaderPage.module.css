@@ -11,6 +11,9 @@
 }
 .TitleHeader{
   color: rgb(0, 101, 252);
+  &:hover{
+    cursor: pointer;
+  }
 }
 .navHeader{
   position: absolute;
