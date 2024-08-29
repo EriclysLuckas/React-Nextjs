@@ -46,11 +46,12 @@ const formattedDate = formatDate(currentDate);
               date: productsForGet.date || formattedDate,
             });
           }
-          navigate("/produtos/all");
 
       };
       fetchProduct();
-    }
+
+    } 
+
  
   
 
@@ -82,18 +83,10 @@ const formattedDate = formatDate(currentDate);
     };
 
 
-
-
-
-
-
-
-
-
-
 if (id) {
       // Atualiza o produto existente
       await updateProduct(id, productData);
+      
     } else {
       // Adiciona um novo produto
       await addProduct(productData);
